@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Attach a popup to a marker instance</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style>
+
+#marker {
+    background-image: url('marker.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
+
+#marker2 {
+    background-image: url('marker2.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
+
+#marker3 {
+    background-image: url('marker3.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
+
+#marker4 {
+    background-image: url('marker4.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
+
+#marker5 {
+    background-image: url('marker5.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
+
+#marker6 {
+    background-image: url('marker6.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
+
+#marker7 {
+    background-image: url('marker7.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
+
+
+#marker8 {
+    background-image: url('marker8.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
+
+#marker9 {
+    background-image: url('marker9.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
+
+#marker10 {
+    background-image: url('marker10.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
+
+
+
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+<style>
+#zoom-level {
+  margin: 10px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top:0;
+  z-index: 1000;
+  background: #ddd;
+}
+</style>
+
+<div id='map'></div>
+<div id='zoom-level'>Zoom Level: 15</div>
+
+
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoianVsaWFtbyIsImEiOiJjamszMThubWgweHM3M2xudHlieGN3NTBmIn0.Nitvq_zjNqE63kAgObyw3g';
+
+var bayarea = [-122.431297, 37.773972];
+var safepassages = [-122.272475, 37.806054];
+var handsonbayarea = [-122.411084, 37.767931];
+var sffoodbank = [-122.393808, 37.754504];
+var projectopenhand = [-122.419030, 37.783760];
+var nativehealth = [-122.22628,37.778086];
+var stanthony = [-122.41321,37.782234];
+var eachonereachone = [-122.41,37.65];
+var prisonerslit = [-122.26856,37.862611];
+var vidavolunteer = [-122.275763,37.847262];
+var richmond = [-122.49028,37.7751];
+
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/juliamo/cjk31zm9n2vf32stfo92luu80',
+    center: bayarea,
+    zoom: 10
+});
+
+map.on('zoomend', function(){
+    document.getElementById('zoom-level').innerHTML = 'Zoom Level: ' + map.getZoom();
+});
+
+// create the popup
+var popup = new mapboxgl.Popup({ offset: 25 })
+    .setText('SAFE PASSAGES, 250 Frank H Ogawa Plaza #6306, Oakland, CA 94612');
+
+var popup2 = new mapboxgl.Popup({ offset: 25 })
+    .setText('HANDS ON BAY AREA, 4889, 1504 Bryant St #100, San Francisco, CA 94103');
+
+var popup3 = new mapboxgl.Popup({ offset: 25 })
+    .setText('SAN FRANCISCO-MARIN FOOD BANK, 900 Pennsylvania Ave, San Francisco, CA 94107');
+
+var popup4 = new mapboxgl.Popup({ offset: 25 })
+    .setText('PROJECT OPEN HAND, 730 Polk Street, San Francisco, CA 94109');
+
+var popup5 = new mapboxgl.Popup({ offset: 25 })
+    .setText('NATIVE AMERICAN HEALTH CENTER, 3124 International Blvd, Oakland, CA 94601');
+
+var popup6 = new mapboxgl.Popup({ offset: 25 })
+    .setText('ST. ANTHONY FOUNDATION, 150 Golden Gate Avenue, San Francisco, CA 94102');
+
+var popup7 = new mapboxgl.Popup({ offset: 25 })
+    .setText('EACH ONE REACH ONE, 146 South Spruce Ave, South San Francisco, CA 94080');
+
+var popup8 = new mapboxgl.Popup({ offset: 25 })
+    .setText('PRISONERS LITERATURE PROJECT, 2022 Blake St, Berkeley, CA 94704');
+
+var popup9 = new mapboxgl.Popup({ offset: 25 })
+    .setText('VIDA VOLUTEERS, 1519 63rd St, Emeryville, CA 94608');
+
+var popup10 = new mapboxgl.Popup({ offset: 25 })
+    .setText('RICHMOND DISTRICT NEIGHBORHOOD CENTER, 741 30th Ave, San Francisco, CA 94121');
+
+
+// create DOM element for the marker
+var el = document.createElement('div');
+el.id = 'marker';
+
+var el2 = document.createElement('div');
+el2.id = 'marker2';
+
+var el3 = document.createElement('div');
+el3.id = 'marker3';
+
+var el4 = document.createElement('div');
+el4.id = 'marker4';
+
+var el5 = document.createElement('div');
+el5.id = 'marker5';
+
+var el6 = document.createElement('div');
+el6.id = 'marker6';
+
+var el7 = document.createElement('div');
+el7.id = 'marker7';
+
+var el8 = document.createElement('div');
+el8.id = 'marker8';
+
+var el9 = document.createElement('div');
+el9.id = 'marker9';
+
+var el10 = document.createElement('div');
+el10.id = 'marker10';
+
+
+
+// create the marker
+new mapboxgl.Marker(el)
+    .setLngLat(safepassages)
+    .setPopup(popup) // sets a popup on this marker
+    .addTo(map);
+
+new mapboxgl.Marker(el2)
+    .setLngLat(handsonbayarea)
+    .setPopup(popup2) // sets a popup on this marker
+    .addTo(map);
+
+new mapboxgl.Marker(el3)
+    .setLngLat(sffoodbank)
+    .setPopup(popup3) // sets a popup on this marker
+    .addTo(map);
+
+new mapboxgl.Marker(el4)
+    .setLngLat(projectopenhand)
+    .setPopup(popup4) // sets a popup on this marker
+    .addTo(map);
+
+new mapboxgl.Marker(el5)
+    .setLngLat(nativehealth)
+    .setPopup(popup5) // sets a popup on this marker
+    .addTo(map);
+
+new mapboxgl.Marker(el6)
+    .setLngLat(stanthony)
+    .setPopup(popup6) // sets a popup on this marker
+    .addTo(map);
+
+new mapboxgl.Marker(el7)
+    .setLngLat(eachonereachone)
+    .setPopup(popup7) // sets a popup on this marker
+    .addTo(map);
+
+new mapboxgl.Marker(el8)
+    .setLngLat(prisonerslit)
+    .setPopup(popup8) // sets a popup on this marker
+    .addTo(map);
+
+new mapboxgl.Marker(el9)
+    .setLngLat(vidavolunteer)
+    .setPopup(popup9) // sets a popup on this marker
+    .addTo(map);
+
+new mapboxgl.Marker(el10)
+    .setLngLat(richmond)
+    .setPopup(popup10) // sets a popup on this marker
+    .addTo(map);
+
+
+
+
+
+</script>
+
+</body>
+</html>
