@@ -162,9 +162,6 @@ var map = new mapboxgl.Map({
     zoom: 10
 });
 
-map.on('zoomend', function(){
-    document.getElementById('zoom-level').innerHTML = 'Zoom Level: ' + map.getZoom();
-});
 
 // create the popup
 var popup = new mapboxgl.Popup({ offset: 25 })
