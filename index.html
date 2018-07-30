@@ -105,6 +105,15 @@
     border-radius: 60%;
     cursor: pointer;
 }
+    
+#marker11 {
+    background-image: url('marker11.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
 
 
 
@@ -144,6 +153,7 @@ var eachonereachone = [-122.41,37.65];
 var prisonerslit = [-122.26856,37.862611];
 var vidavolunteer = [-122.275763,37.847262];
 var richmond = [-122.49028,37.7751];
+var coachart = [-122.33833,37.933783];
 
 
 var map = new mapboxgl.Map({
@@ -188,6 +198,9 @@ var popup9 = new mapboxgl.Popup({ offset: 25 })
 var popup10 = new mapboxgl.Popup({ offset: 25 })
     .setText('RICHMOND DISTRICT NEIGHBORHOOD CENTER, 741 30th Ave, San Francisco, CA 94121');
 
+var popup11 = new mapboxgl.Popup({ offset: 25 })
+    .setText('COACHART, 3230 Macdonald Ave, Richmond, CA 94804');
+
 
 // create DOM element for the marker
 var el = document.createElement('div');
@@ -219,6 +232,9 @@ el9.id = 'marker9';
 
 var el10 = document.createElement('div');
 el10.id = 'marker10';
+    
+var el11 = document.createElement('div');
+el11.id = 'marker11';
 
 
 
@@ -271,6 +287,12 @@ new mapboxgl.Marker(el9)
 new mapboxgl.Marker(el10)
     .setLngLat(richmond)
     .setPopup(popup10) // sets a popup on this marker
+    .addTo(map);
+    
+
+new mapboxgl.Marker(el11)
+    .setLngLat(coachart)
+    .setPopup(popup11) // sets a popup on this marker
     .addTo(map);
 
 
