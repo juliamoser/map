@@ -123,6 +123,15 @@
     border-radius: 60%;
     cursor: pointer;
 }
+    
+#marker13 {
+    background-image: url('marker13.png');
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    border-radius: 60%;
+    cursor: pointer;
+}
 
 
 
@@ -162,6 +171,7 @@ var vidavolunteer = [-122.275763,37.847262];
 var richmond = [-122.49028,37.7751];
 var coachart = [-122.33833,37.933783];
 var hayward = [-122.05618,37.686359];
+var fremont = [-105.750596,55.585901];
 
 
 var map = new mapboxgl.Map({
@@ -208,6 +218,10 @@ var popup11 = new mapboxgl.Popup({ offset: 25 })
     
 var popup12 = new mapboxgl.Popup({ offset: 25 })
     .setText('CORPORATE GROUP OPPORTUNITY, 2750 Sparks Way Hayward, CA 94541');
+    
+var popup12 = new mapboxgl.Popup({ offset: 25 })
+    .setText('BAY AREA SUPERHERO HEART RUN, 2100 Isherwood Way Quarry Lakes Park Fremont, CA 94536');
+
 
 
 
@@ -247,6 +261,9 @@ el11.id = 'marker11';
 
 var el12 = document.createElement('div');
 el12.id = 'marker12';
+
+var el12 = document.createElement('div');
+el12.id = 'marker13';
 
 
 
@@ -311,10 +328,11 @@ new mapboxgl.Marker(el12)
     .setLngLat(hayward)
     .setPopup(popup12) // sets a popup on this marker
     .addTo(map);
-
-
-
-
+    
+new mapboxgl.Marker(el13)
+    .setLngLat(fremont)
+    .setPopup(popup13) // sets a popup on this marker
+    .addTo(map);
 
 
 </script>
