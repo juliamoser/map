@@ -161,7 +161,7 @@ var prisonerslit = [-122.26856,37.862611];
 var vidavolunteer = [-122.275763,37.847262];
 var richmond = [-122.49028,37.7751];
 var coachart = [-122.33833,37.933783];
-var Hayward = [-122.05618,37.686359];
+var hayward = [-122.05618,37.686359];
 
 
 var map = new mapboxgl.Map({
@@ -245,6 +245,9 @@ el10.id = 'marker10';
 var el11 = document.createElement('div');
 el11.id = 'marker11';
 
+var el12 = document.createElement('div');
+el12.id = 'marker12';
+
 
 
 // create the marker
@@ -303,6 +306,12 @@ new mapboxgl.Marker(el11)
     .setLngLat(coachart)
     .setPopup(popup11) // sets a popup on this marker
     .addTo(map);
+    
+new mapboxgl.Marker(el12)
+    .setLngLat(hayward)
+    .setPopup(popup12) // sets a popup on this marker
+    .addTo(map);
+
 
 
 
